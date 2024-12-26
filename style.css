@@ -1,0 +1,710 @@
+/* Variáveis de Cores */
+:root {
+    /* Gradiente principal sofisticado com tons profundos */
+    --primary-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    
+    /* Fundo do cabeçalho com transparência refinada */
+    --header-bg: rgba(20, 20, 20, 0.9);
+    
+    /* Gradiente dos botões com um toque metálico */
+    --button-gradient: linear-gradient(45deg, #555555, #333333);
+    --button-hover-gradient: linear-gradient(45deg, #666666, #444444);
+    
+    /* Cor do texto clara para alto contraste */
+    --text-color: #EAEAEA;
+    
+    /* Sombra intensa para destaque de elementos */
+    --shadow-color: rgba(0, 0, 0, 0.8);
+    
+    /* Cores de destaque vibrantes */
+    --accent-color: #00c6ff;
+    --accent-hover-color: #0072ff;
+    
+    /* Cores dos botões de salvar/remover */
+    --save-btn-color: #28a745; /* Verde */
+    --save-btn-remove-color: #dc3545; /* Vermelho */
+    
+    /* Fundos dos inputs com efeito de vidro fosco */
+    --input-bg: rgba(255, 255, 255, 0.1);
+    --input-bg-focus: rgba(255, 255, 255, 0.2);
+    
+    /* Fundo dos cards com textura sutil */
+    --card-bg: #1a1a1a;
+    --card-hover-bg: rgba(255, 255, 255, 0.05);
+    
+    /* Bordas e realces */
+    --border-color: #444444;
+    --border-hover-color: #555555;
+    
+    /* Cores para o botão de salvar/remover */
+    --button-save-bg: #28a745; /* Verde */
+    --button-save-hover-bg: #218838; /* Verde Escuro */
+    --button-remove-bg: #dc3545; /* Vermelho */
+    --button-remove-hover-bg: #c82333; /* Vermelho Escuro */
+    
+    /* Cores para a caixa de seleção */
+    --select-bg: #333333; /* Fundo mais escuro para melhor contraste */
+    --select-hover-bg: #444444; /* Fundo ao passar o mouse */
+    --select-border: #555555; /* Cor da borda */
+    --select-focus-border: var(--accent-color); /* Cor da borda ao focar */
+    --select-arrow-color: #FFFFFF; /* Cor da seta */
+    --select-text-color: #FFFFFF; /* Cor do texto */
+    
+    /* Cor do texto nos botões de remover */
+    --save-btn-remove-text-color: #FFFFFF; /* Branco para legibilidade */
+}
+
+/* Estilos Gerais */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--primary-gradient);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+    transition: background 0.5s ease;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--header-bg);
+    color: #FFFFFF;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    backdrop-filter: blur(15px);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(20, 20, 20, 0.95);
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+.header-left,
+.header-center,
+.header-right {
+    flex: 1;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-center {
+    display: flex;
+    justify-content: center;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    transition: font-size 0.3s ease;
+}
+
+/* Barra de Pesquisa */
+#search-bar {
+    padding: 12px 24px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: #FFFFFF;
+    border-radius: 50px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 350px;
+    transition: border 0.3s, background-color 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+#search-bar::placeholder {
+    color: #bbb;
+}
+
+#search-bar:focus {
+    border-color: var(--accent-color);
+    background-color: var(--input-bg-focus);
+    outline: none;
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Botões */
+button, #logout-btn, #back-btn, #login-btn, #save-video-btn {
+    background: var(--button-gradient);
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(51, 51, 51, 0.4);
+}
+
+button:hover, #logout-btn:hover, #back-btn:hover, #login-btn:hover, #save-video-btn:hover {
+    background: var(--button-hover-gradient);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(51, 51, 51, 0.6);
+}
+
+/* Botões Específicos */
+#save-video-btn {
+    background: var(--button-save-bg);
+    box-shadow: 0 6px 18px rgba(40, 167, 69, 0.4);
+}
+
+#save-video-btn:hover {
+    background: var(--button-save-hover-bg);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.6);
+}
+
+.save-btn {
+    color: var(--save-btn-color);
+    font-size: 18px; /* Aumentado para melhor legibilidade */
+}
+
+.save-btn.remove {
+    color: var(--save-btn-remove-text-color); /* Texto branco para melhor legibilidade */
+    background: var(--button-remove-bg);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.5);
+}
+
+.save-btn.remove:hover {
+    background: var(--button-remove-hover-bg);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.7);
+}
+
+/* Container do Vídeo */
+#video-player-container {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1000px;
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.7);
+    background: #000;
+    transition: transform 0.3s ease;
+}
+
+#video-player-container:hover {
+    transform: scale(1.005);
+}
+
+#video-player {
+    width: 100%;
+    height: 550px;
+    border: none;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+#video-player:hover {
+    transform: scale(1.02);
+}
+
+/* Seção de Recomendações */
+.recommendations {
+    margin: 40px auto;
+    max-width: 1300px;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.recommendations h2 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1.2px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.recommendations h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Grid de Vídeos */
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.video-item {
+    position: relative;
+    width: 220px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    box-shadow: 0 6px 20px rgba(26, 26, 26, 0.4);
+}
+
+.video-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 18px 40px rgba(26, 26, 26, 0.6);
+}
+
+.video-item:hover img {
+    transform: scale(1.1);
+}
+
+.video-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.85));
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    transition: background 0.3s;
+}
+
+.video-item:hover .video-title {
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.95));
+}
+
+/* Selecionar Gênero */
+.genre-select-container {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-wrapper {
+    position: relative;
+    max-width: 350px;
+    width: 100%;
+}
+
+select {
+    width: 100%;
+    padding: 16px 40px 16px 20px;
+    background-color: var(--select-bg);
+    color: var(--select-text-color);
+    border: 1px solid var(--select-border);
+    border-radius: 35px;
+    font-size: 1rem;
+    transition: border 0.3s, background-color 0.3s, box-shadow 0.3s;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+select:hover, select:focus {
+    border-color: var(--accent-color);
+    background-color: var(--select-hover-bg);
+    outline: none;
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+/* Ícone da seta do select */
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--select-arrow-color);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+/* Botão de Salvar/Remover */
+.save-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(51, 51, 51, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--save-btn-color);
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(51, 51, 51, 0.5);
+}
+
+.save-btn:hover {
+    background: rgba(51, 51, 51, 1);
+    transform: scale(1.1);
+}
+
+.save-btn.remove {
+    color: var(--save-btn-remove-text-color); /* Texto branco para melhor legibilidade */
+    background: var(--button-remove-bg);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.5);
+}
+
+.save-btn.remove:hover {
+    background: var(--button-remove-hover-bg);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.7);
+}
+
+/* Botão de Salvar no Player */
+#save-video-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 14px 30px;
+    background: var(--button-save-bg);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
+}
+
+#save-video-btn:hover {
+    background: var(--button-save-hover-bg);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(40, 167, 69, 0.7);
+}
+
+/* Estilos para a página de perfil */
+.saved-videos {
+    margin: 40px auto;
+    max-width: 1300px;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.saved-videos h2 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1.2px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.saved-videos h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Estilos para login.html */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 30px;
+    background: var(--primary-gradient);
+}
+
+.container h1 {
+    margin-bottom: 35px;
+    font-size: 48px;
+    color: #FFFFFF;
+    text-align: center;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+}
+
+#login-btn {
+    padding: 20px 40px;
+    border: none;
+    border-radius: 35px;
+    background: var(--button-gradient);
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 8px 25px rgba(51, 51, 51, 0.5);
+}
+
+#login-btn:hover {
+    background: var(--button-hover-gradient);
+    transform: translateY(-7px);
+    box-shadow: 0 14px 40px rgba(51, 51, 51, 0.7);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    /* Ajustes para desktops menores */
+    #video-player-container {
+        max-width: 900px;
+    }
+
+    .recommendations, .saved-videos {
+        max-width: 1100px;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Ajustes para tablets */
+    #video-player {
+        height: 450px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .recommendations h2,
+    .saved-videos h2 {
+        font-size: 30px;
+    }
+
+    #login-btn {
+        font-size: 20px;
+        padding: 16px 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes gerais para dispositivos móveis */
+    body {
+        font-size: 16px;
+    }
+
+    /* Ajuste do cabeçalho */
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .header-left, .header-center, .header-right {
+        flex: 1 1 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    #search-bar, #logout-btn, #back-btn {
+        width: 90%;
+        margin: 0 auto 15px;
+    }
+
+    /* Ajuste da grade de vídeos */
+    .video-grid {
+        gap: 25px;
+    }
+
+    .video-item {
+        width: 48%; /* Dois vídeos por linha */
+    }
+
+    /* Ajuste dos títulos dos vídeos */
+    .video-title {
+        font-size: 1.1rem;
+    }
+
+    /* Ajuste do seletor de gênero */
+    .genre-select-container {
+        flex-direction: column;
+    }
+
+    .select-wrapper {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes adicionais para telas menores */
+    #video-player {
+        height: 300px;
+    }
+
+    .recommendations h2,
+    .saved-videos h2 {
+        font-size: 1.8rem;
+    }
+
+    #search-bar, #logout-btn, #back-btn {
+        width: 100%;
+    }
+
+    .select-wrapper {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    .video-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-item {
+        width: 100%; /* Vídeos ocupam toda a largura */
+    }
+
+    .save-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    /* Redução do padding dos botões */
+    button, #logout-btn, #back-btn, #login-btn, #save-video-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilos para o ícone de perfil */
+#profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(51, 51, 51, 0.5);
+}
+
+#profile-icon:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 25px rgba(51, 51, 51, 0.7);
+}
+
+/* Animações Personalizadas */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Scroll Suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos Adicionais para Formulários e Inputs */
+input, textarea {
+    background-color: var(--input-bg);
+    color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    transition: border 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-color);
+    background-color: var(--input-bg-focus);
+    outline: none;
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Tooltip para Botões */
+button[data-tooltip], .save-btn[data-tooltip] {
+    position: relative;
+}
+
+button[data-tooltip]::after, .save-btn[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+button[data-tooltip]:hover::after, .save-btn[data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Streamer</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <button id="logout-btn">Logout</button>
+    </div>
+    <div class="header-center">
+        <h1>Meu Streamer</h1>
+    </div>
+    <div class="header-right">
+        <input type="text" id="search-bar" placeholder="Pesquisar...">
+        <img src="profile-icon.png" alt="Perfil" id="profile-icon">
+    </div>
+</header>
+
+<div class="genre-select-container">
+    <select id="genre-select">
+        <option value="">Todos os Gêneros</option>
+        <option value="Ação">Ação</option>
+        <option value="Animação">Animação</option>
+        <option value="Aventura">Aventura</option>
+        <option value="Comédia">Comédia</option>
+        <option value="Comédia Romântica">Comédia Romântica</option>
+        <option value="Drama">Drama</option>
+        <option value="Documentário">Documentário</option>
+        <option value="Épico">Épico</option>
+        <option value="Fantasia">Fantasia</option>
+        <option value="Ficção Científica">Ficção Científica</option>
+        <option value="Mistério">Mistério</option>
+        <option value="Romance">Romance</option>
+        <option value="Suspense">Suspense</option>
+        <option value="Terror">Terror</option>
+        <!-- Outros gêneros -->
+    </select>
+</div>
+
+<div class="video-grid" id="video-container">
+    <div class="video-item" data-video-id="ZZYmgwWFyDk" data-genre="Terror" data-title="A Casa Sinistra (1932)">
+        <img src="https://img.youtube.com/vi/ZZYmgwWFyDk/hqdefault.jpg" alt="A Casa Sinistra (1932)">
+        <div class="video-title">A Casa Sinistra (1932)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="sXMXqWSalaA" data-genre="Aventura" data-title="Agente Secreto (1936)">
+        <img src="https://img.youtube.com/vi/sXMXqWSalaA/hqdefault.jpg" alt="Agente Secreto (1936)">
+        <div class="video-title">Agente Secreto (1936)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="rhGcEYqo1JA" data-genre="Aventura" data-title="O Conde de Monte Cristo (1934)">
+        <img src="https://img.youtube.com/vi/rhGcEYqo1JA/hqdefault.jpg" alt="O Conde de Monte Cristo (1934)">
+        <div class="video-title">O Conde de Monte Cristo (1934)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="uL4KyzJVmu8" data-genre="Mistério" data-title="Barba Azul (1944)">
+        <img src="https://img.youtube.com/vi/uL4KyzJVmu8/hqdefault.jpg" alt="Barba Azul (1944)">
+        <div class="video-title">Barba Azul (1944)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="1TWtwdpH_ig" data-genre="Drama" data-title="Páginas da Vida (1952)">
+        <img src="https://img.youtube.com/vi/1TWtwdpH_ig/hqdefault.jpg" alt="Páginas da Vida (1952)">
+        <div class="video-title">Páginas da Vida (1952)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="0PhONRF8U70" data-genre="Drama" data-title="Um Retrato de Mulher (1944)">
+        <img src="https://img.youtube.com/vi/0PhONRF8U70/hqdefault.jpg" alt="Um Retrato de Mulher (1944)">
+        <div class="video-title">Um Retrato de Mulher (1944)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="HSEE0-7Tjs8" data-genre="Mistério" data-title="O Cão dos Baskervilles (1959)">
+        <img src="https://img.youtube.com/vi/HSEE0-7Tjs8/hqdefault.jpg" alt="O Cão dos Baskervilles (1959)">
+        <div class="video-title">O Cão dos Baskervilles (1959)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="1KZjQvDw2Mc" data-genre="Mistério" data-title="Jovem e Inocente (1937)">
+        <img src="https://img.youtube.com/vi/1KZjQvDw2Mc/hqdefault.jpg" alt="Jovem e Inocente (1937)">
+        <div class="video-title">Jovem e Inocente (1937)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="n1gNCpOKciI" data-genre="Terror" data-title="A Noite dos Mortos Vivos (1968)">
+        <img src="https://img.youtube.com/vi/n1gNCpOKciI/hqdefault.jpg" alt="A Noite dos Mortos Vivos (1968)">
+        <div class="video-title">A Noite dos Mortos Vivos (1968)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="yr0n9DWCnLw" data-genre="Aventura" data-title="Ulysses (1954)">
+        <img src="https://img.youtube.com/vi/yr0n9DWCnLw/hqdefault.jpg" alt="Ulysses (1954)">
+        <div class="video-title">Ulysses (1954)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="orbMHRU6CmQ" data-genre="Terror" data-title="Maldição (1950)">
+        <img src="https://img.youtube.com/vi/orbMHRU6CmQ/hqdefault.jpg" alt="Maldição (1950)">
+        <div class="video-title">Maldição (1950)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="muFyksHgIa8" data-genre="Drama" data-title="Agonia de Amor (1947)">
+        <img src="https://img.youtube.com/vi/muFyksHgIa8/hqdefault.jpg" alt="Agonia de Amor (1947)">
+        <div class="video-title">Agonia de Amor (1947)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="TXxujKA7u64" data-genre="Drama" data-title="Rebecca, a Mulher Inesquecível (1940)">
+        <img src="https://img.youtube.com/vi/TXxujKA7u64/hqdefault.jpg" alt="Rebecca, a Mulher Inesquecível (1940)">
+        <div class="video-title">Rebecca, a Mulher Inesquecível (1940)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="IRmNWfMH2_A" data-genre="Aventura" data-title="O Último dos Moicanos (1936)">
+        <img src="https://img.youtube.com/vi/IRmNWfMH2_A/hqdefault.jpg" alt="O Último dos Moicanos (1936)">
+        <div class="video-title">O Último dos Moicanos (1936)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="sDJmCChYNjo" data-genre="Drama" data-title="Era Uma Vez em Tóquio (1953)">
+        <img src="https://img.youtube.com/vi/sDJmCChYNjo/hqdefault.jpg" alt="Era Uma Vez em Tóquio (1953)">
+        <div class="video-title">Era Uma Vez em Tóquio (1953)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="8xhPtuQqywA" data-genre="Drama" data-title="Pai e Filha (Banshun, 1949)">
+        <img src="https://img.youtube.com/vi/8xhPtuQqywA/hqdefault.jpg" alt="Pai e Filha (Banshun, 1949)">
+        <div class="video-title">Pai e Filha (Banshun, 1949)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="TiAQo8FnxOk" data-genre="Épico" data-title="Lawrence da Arábia (1962)">
+        <img src="https://img.youtube.com/vi/TiAQo8FnxOk/hqdefault.jpg" alt="Lawrence da Arábia (1962)">
+        <div class="video-title">Lawrence da Arábia (1962)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="XQFqhBtWgYY" data-genre="Suspense" data-title="O Terceiro Tiro (1955)">
+        <img src="https://img.youtube.com/vi/XQFqhBtWgYY/hqdefault.jpg" alt="O Terceiro Tiro (1955)">
+        <div class="video-title">O Terceiro Tiro (1955)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="iwxytHnXlIc" data-genre="Suspense" data-title="O Homem que Sabia Demais (1934)">
+        <img src="https://img.youtube.com/vi/iwxytHnXlIc/hqdefault.jpg" alt="O Homem que Sabia Demais (1934)">
+        <div class="video-title">O Homem que Sabia Demais (1934)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="atJlcHFCT00" data-genre="Terror" data-title="Despertar dos Mortos (1978)">
+        <img src="https://img.youtube.com/vi/atJlcHFCT00/hqdefault.jpg" alt="Despertar dos Mortos (1978)">
+        <div class="video-title">Despertar dos Mortos (1978)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="ag15Ehv5Qs0" data-genre="Terror" data-title="A Maldição da Múmia (1964)">
+        <img src="https://img.youtube.com/vi/ag15Ehv5Qs0/hqdefault.jpg" alt="A Maldição da Múmia (1964)">
+        <div class="video-title">A Maldição da Múmia (1964)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="VrsSufjlPM0" data-genre="Drama" data-title="Relâmpago (Inazuma, 1952)">
+        <img src="https://img.youtube.com/vi/VrsSufjlPM0/hqdefault.jpg" alt="Relâmpago (Inazuma, 1952)">
+        <div class="video-title">Relâmpago (Inazuma, 1952)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="csgWENaqy5Y" data-genre="Drama" data-title="Medo e Desejo (1953)">
+        <img src="https://img.youtube.com/vi/csgWENaqy5Y/hqdefault.jpg" alt="Medo e Desejo (1953)">
+        <div class="video-title">Medo e Desejo (1953)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="SaQLcriLMh4" data-genre="Drama" data-title="Crisântemos Tardios (1939)">
+        <img src="https://img.youtube.com/vi/SaQLcriLMh4/hqdefault.jpg" alt="Crisântemos Tardios (1939)">
+        <div class="video-title">Crisântemos Tardios (1939)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="TOjv5EEKGU0" data-genre="Drama" data-title="O Anjo Embriagado (1948)">
+        <img src="https://img.youtube.com/vi/TOjv5EEKGU0/hqdefault.jpg" alt="O Anjo Embriagado (1948)">
+        <div class="video-title">O Anjo Embriagado (1948)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="p6cS3B3upZc" data-genre="Animação" data-title="O Halloween de Pooh e o Efalante">
+        <img src="https://img.youtube.com/vi/p6cS3B3upZc/hqdefault.jpg" alt="O Halloween de Pooh e o Efalante">
+        <div class="video-title">O Halloween de Pooh e o Efalante</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="TwaNQlc6Tm0" data-genre="Animação" data-title="TRANSFORMERS: O FILME (1986)">
+        <img src="https://img.youtube.com/vi/TwaNQlc6Tm0/hqdefault.jpg" alt="TRANSFORMERS: O FILME (1986)">
+        <div class="video-title">TRANSFORMERS: O FILME (1986)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="bKpTOAKL5PA" data-genre="Terror" data-title="O Morcego Diabólico (1940)">
+        <img src="https://img.youtube.com/vi/bKpTOAKL5PA/hqdefault.jpg" alt="O Morcego Diabólico (1940)">
+        <div class="video-title">O Morcego Diabólico (1940)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="QW_BqVae1Co" data-genre="Comédia Romântica" data-title="It (1927)">
+        <img src="https://img.youtube.com/vi/QW_BqVae1Co/hqdefault.jpg" alt="It (1927)">
+        <div class="video-title">It (1927)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="measf7YpqO0" data-genre="Drama" data-title="O Homem que Ri (1928)">
+        <img src="https://img.youtube.com/vi/measf7YpqO0/hqdefault.jpg" alt="O Homem que Ri (1928)">
+        <div class="video-title">O Homem que Ri (1928)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="-ePXfXV0Yus" data-genre="Terror" data-title="A Queda da Casa de Usher (1928)">
+        <img src="https://img.youtube.com/vi/-ePXfXV0Yus/hqdefault.jpg" alt="A Queda da Casa de Usher (1928)">
+        <div class="video-title">A Queda da Casa de Usher (1928)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="5JNDbPfO-Uk" data-genre="Comédia" data-title="As Três Idades (1923)">
+        <img src="https://img.youtube.com/vi/5JNDbPfO-Uk/hqdefault.jpg" alt="As Três Idades (1923)">
+        <div class="video-title">As Três Idades (1923)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+    <div class="video-item" data-video-id="Bm7T8e07JxQ" data-genre="Drama" data-title="Recordações (1947)">
+        <img src="https://img.youtube.com/vi/Bm7T8e07JxQ/hqdefault.jpg" alt="Recordações (1947)">
+        <div class="video-title">Recordações (1947)</div>
+        <button class="save-btn">Salvar</button>
+    </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
